@@ -6,9 +6,17 @@ import { Person } from "./view/person-model";
     let perM : PersonManage = new PersonManage();
     let valid : PersonValid = new PersonValid();
     let model : Person = new Person();
+
+
+    
     let update = () => {
-        perM.update(); 
+        perM.update();
     } 
+
+    let addAll = () =>{
+        perM.addAll();
+    }
+
 
     let status : any ;
     let person = (state: any) => {
@@ -24,6 +32,8 @@ import { Person } from "./view/person-model";
         //     (document.getElementById("name") as any)['valid'] = person.name;
         // }
     }
+
+
     let savePerson = () => { 
         let  un= (document.getElementById("username")as any)['value'];
         let fa = (document.getElementById("name")as any)['value'];

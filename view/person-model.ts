@@ -6,10 +6,10 @@ export class Person{
     message : string;
 }
 
-export interface IPerson {
+export interface IactionP {
     update();
     add();
     addAll();
-    findPerson(id:number) : IPerson;
+    // findPerson(id:number) : IactionP;
     edit(modal);
 }

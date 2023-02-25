@@ -1,4 +1,4 @@
-import { UserModel } from "../view/user-model"
+import { UserModel } from "./view/user-model"
 
 export class UserAuthentication {
 
@@ -11,6 +11,8 @@ export class UserAuthentication {
         this.username = user.username;
         this.pass = user.pass;
     }
+
+    
     private nameValid (name:string) {
         if (name !=undefined && name.length>=3 )
         return true
