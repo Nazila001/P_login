@@ -4,7 +4,7 @@ exports.PersonManage = void 0;
 var PersonManage = /** @class */ (function () {
     function PersonManage() {
         //lsv : Person[] = new Array<Person>();
-        this.lsv = [{ name: "مینا", family: "22رضایی", username: "minarezaeei", message: "مطالب جدید" }];
+        this.lsv = [{ name: "مینا", family: "22رضمیی", username: "minarezaeei", message: "مطالب جدید" }];
     }
     PersonManage.prototype.add = function () {
         // let array = [{name:"مینا", family:"رضایی",username:"minarezaeei"}] 
@@ -24,7 +24,7 @@ var PersonManage = /** @class */ (function () {
                 tr_1 += "<td>" + item.name + "</td>";
                 tr_1 += "<td>" + item.family + "</td>";
                 tr_1 += "<td>" + item.message + "</td>";
-                tr_1 += "<td><button onclick=" + "post('edit') class='btn py-0 px-1 btn-warning' data-bs-target='#personModal' data-bs-toggle='modal'>" + "ویرایش" + "</button>"
+                tr_1 += "<td><button onclick=" + "post(" + item.username + ") class='btn py-0 px-1 btn-warning' data-bs-target='#personModal' data-bs-toggle='modal'>" + "ویرایش" + "</button>"
                     + "<button onclick=" + "info(" + item.username + ") class='btn py-0 px-1 btn-info' data-bs-target='#personInfo' data-bs-toggle='modal'>" + "نمایش" + "</button>"
                     + "</td></tr>";
             });
@@ -33,6 +33,8 @@ var PersonManage = /** @class */ (function () {
         else {
             document.getElementById("tbody").innerHTML = "";
         }
+    };
+    PersonManage.prototype.post = function () {
     };
     PersonManage.prototype.edit = function (modal) {
     };

@@ -17,6 +17,14 @@ import { Person } from "./view/person-model";
         perM.addAll();
     }
 
+    let post = (state : string ) => {
+        if (state == "add") {
+            (document.getElementById("personLabel")as any).innererTEXT = "افزودن پست"
+        }
+        else{
+            (document.getElementById("personLabel")as any).innererTEXT =   `ویرایش ${state }`
+        }
+    }
 
     let status : any ;
     let person = (state: any) => {

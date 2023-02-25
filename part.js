@@ -1,17 +1,25 @@
 "use strict";
 exports.__esModule = true;
-// var Person_1 = require("./data_access_layer/Person");
-// var person_valid_1 = require("./valid/person-valid");
-// var person_model_1 = require("./view/person-model");
+var Person_1 = require("./data_access_layer/Person");
+var person_valid_1 = require("./valid/person-valid");
+var person_model_1 = require("./view/person-model");
 {
-    var perM_1 = new PersonManage();
-    var valid = new PersonValid();
-    var model_1 = new Person();
+    var perM_1 = new Person_1.PersonManage();
+    var valid = new person_valid_1.PersonValid();
+    var model_1 = new person_model_1.Person();
     var update = function () {
-        update();
+        perM_1.update();
     };
     var addAll = function () {
-        addAll();
+        perM_1.addAll();
+    };
+    var post = function (state) {
+        if (state == "add") {
+            document.getElementById("personLabel").innererTEXT = "افزودن پست";
+        }
+        else {
+            document.getElementById("personLabel").innererTEXT = "\u0648\u06CC\u0631\u0627\u06CC\u0634 ".concat(state);
+        }
     };
     var status_1;
     var person = function (state) {

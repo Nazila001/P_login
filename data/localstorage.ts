@@ -2,7 +2,9 @@ export class LocalStorage <DKey, DValue> {
 
     constructor(public key:DKey , public value : DValue){}
 
-    Add() {}
+    add() {}
+
+    get(){}
 
 }
     
