@@ -1,23 +1,22 @@
 import { PersonManage } from "./data_access_layer/Person";
-import { Person } from "./view/person-model";
+// import { Person } from "./view/person-model";
 
-{
-    let perM : PersonManage = new PersonManage();
+
+// let perM : PersonManage = new PersonManage();
 
     let update = () => {
-        perM.update();
+        new PersonManage().update();
     } 
 
     let addAll = () =>{
-        perM.addAll();
+        new PersonManage().addAll();
     }
 
-    let post = (state : string ) => {
+    let post = (state : any ) => {
         if (state == "add") {
             (document.getElementById("personLabel")as any).innerText = "افزودن پست";
         }
         else{
-            (document.getElementById("personLabel")as any).innerText =   `ویرایش ${state }`;
+            (document.getElementById("personLabel")as any).innerText =   `ویرایش ${state}`;
         }
     }
-}

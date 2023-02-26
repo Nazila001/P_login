@@ -6,7 +6,9 @@ export class PersonManage implements IactionP {
 
 
     //lsv : Person[] = new Array<Person>();
-    lsv : Person[] = [{name:"مینا", family:"22رضمیی",username:"minarezaeei", message:"مطالب جدید"}]
+    lsv : Person[] = [{username:"minarezaeei", name:"مینا", family:"22رضایی", message:"مطالب جدید"}];
+    lsv1 : Person[] = [{username:"maryamsabaeei", name:"مریم", family:"صبایی", message:"مطالب جدید۱۲۳۴۵"}];
+
 
     add() {
         // let array = [{name:"مینا", family:"رضایی",username:"minarezaeei"}] 
@@ -16,6 +18,9 @@ export class PersonManage implements IactionP {
 
     addAll(){
         this.lsv.push(...this.lsv);
+        this.lsv1.push(...this.lsv1);
+        let array = [{id:1,username:"maryamsabaeei", name:"مریم", family:"صبایی", message:"مطالب جدید۱۲۳۴۵"}];
+        this.lsv1.push(...array);
         this.update();
     }
 
@@ -43,9 +48,8 @@ export class PersonManage implements IactionP {
     }
 
 
-    post(){
+
     
-    }
 
 
 

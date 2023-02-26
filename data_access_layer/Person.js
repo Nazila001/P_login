@@ -4,7 +4,8 @@ exports.PersonManage = void 0;
 var PersonManage = /** @class */ (function () {
     function PersonManage() {
         //lsv : Person[] = new Array<Person>();
-        this.lsv = [{ name: "مینا", family: "22رضمیی", username: "minarezaeei", message: "مطالب جدید" }];
+        this.lsv = [{ username: "minarezaeei", name: "مینا", family: "22رضایی", message: "مطالب جدید" }];
+        this.lsv1 = [{ username: "maryamsabaeei", name: "مریم", family: "صبایی", message: "مطالب جدید۱۲۳۴۵" }];
     }
     PersonManage.prototype.add = function () {
         // let array = [{name:"مینا", family:"رضایی",username:"minarezaeei"}] 
@@ -12,8 +13,11 @@ var PersonManage = /** @class */ (function () {
         // let array(...array); //how to add a item into an array
     };
     PersonManage.prototype.addAll = function () {
-        var _a;
+        var _a, _b, _c;
         (_a = this.lsv).push.apply(_a, this.lsv);
+        (_b = this.lsv1).push.apply(_b, this.lsv1);
+        var array = [{ id: 1, username: "maryamsabaeei", name: "مریم", family: "صبایی", message: "مطالب جدید۱۲۳۴۵" }];
+        (_c = this.lsv1).push.apply(_c, array);
         this.update();
     };
     PersonManage.prototype.update = function () {
@@ -33,8 +37,6 @@ var PersonManage = /** @class */ (function () {
         else {
             document.getElementById("tbody").innerHTML = "";
         }
-    };
-    PersonManage.prototype.post = function () {
     };
     PersonManage.prototype.edit = function (modal) {
     };

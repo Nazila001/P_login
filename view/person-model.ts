@@ -1,4 +1,5 @@
 export class Person{
+    id? : number;
     username: string;
     name : string;
     family : string;
@@ -6,10 +7,9 @@ export class Person{
     message : string;
 }
 
-export interface IactionP {
+export interface    IactionP {
     update();
     add();
     addAll();
-    // findPerson(id:number) : IactionP;
-    edit(modal);
+    // findPerson(id:number) : Person;
 }

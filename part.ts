@@ -2,7 +2,7 @@ import { PersonManage } from "./data_access_layer/Person"
 import { PersonValid } from "./valid/person-valid";
 import { Person } from "./view/person-model";
 
-{   
+   
     let perM : PersonManage = new PersonManage();
     let valid : PersonValid = new PersonValid();
     let model : Person = new Person();
@@ -32,13 +32,6 @@ import { Person } from "./view/person-model";
         if (state == "add") {
             (document.getElementById("personLabel")as any).innerTEXT = "افزودن شخص";    
         }
-        // else {
-        //     let person = perM.findPerson(state);
-        //     (document.getElementById("personLabel")as any).innerTEXT = `ویرایش ${person.name}`;
-        //     (document.getElementById("username") as any)['valid'] = person.username;
-        //     (document.getElementById("family") as any)['valid'] = person.family;
-        //     (document.getElementById("name") as any)['valid'] = person.name;
-        // }
     }
 
 
@@ -65,5 +58,5 @@ import { Person } from "./view/person-model";
     //     (document.getElementById("infoFamily") as any).innerTEXT = person.family;
     //     (document.getElementById("infoPost") as any).innerTEXT = person.name;
     // }
-}
+
 
