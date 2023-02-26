@@ -1,5 +1,5 @@
 export class Person{
-    id? : number;
+    id : number;
     username: string;
     name : string;
     family : string;
@@ -7,9 +7,9 @@ export class Person{
     message : string;
 }
 
-export interface    IactionP {
-    update();
-    add();
-    addAll();
-    // findPerson(id:number) : Person;
-}
+// export interface IactionP {
+//     update();
+//     add();
+//     addAll();
+//     // findPerson(id:number) : Person;
+// }

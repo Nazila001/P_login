@@ -14,7 +14,7 @@ import { PersonManage } from "./data_access_layer/Person";
 
     let post = (state : any ) => {
         if (state == "add") {
-            (document.getElementById("personLabel")as any).innerText = "افزودن پست";
+            (document.getElementById("personLabel")as any).innerText = "افزودن پست جدید";
         }
         else{
             (document.getElementById("personLabel")as any).innerText =   `ویرایش ${state}`;

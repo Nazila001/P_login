@@ -1,13 +1,15 @@
-import { IactionP } from "../view/person-model";
+import { IactionP } from '../action/IPerson';
 import { Person } from '../view/person-model';
 
 
 export class PersonManage implements IactionP {
+    
+
 
 
     //lsv : Person[] = new Array<Person>();
-    lsv : Person[] = [{username:"minarezaeei", name:"مینا", family:"22رضایی", message:"مطالب جدید"}];
-    lsv1 : Person[] = [{username:"maryamsabaeei", name:"مریم", family:"صبایی", message:"مطالب جدید۱۲۳۴۵"}];
+    lsv : Person[] = [{id:1, username:"minarezaeei", name:"مینا", family:"22رضایی", message:"مطالب جدید"}];
+    lsv1 : Person[] = [{id:2, username:"maryamsabaeei", name:"مریم", family:"صبایی", message:"مطالب جدید۱۲۳۴۵"}];
 
 
     add() {
@@ -19,7 +21,7 @@ export class PersonManage implements IactionP {
     addAll(){
         this.lsv.push(...this.lsv);
         this.lsv1.push(...this.lsv1);
-        let array = [{id:1,username:"maryamsabaeei", name:"مریم", family:"صبایی", message:"مطالب جدید۱۲۳۴۵"}];
+        let array = [{id:3, username:"maryamsabaeei", name:"مریم", family:"صبایی", message:"مطالب جدید۱۲۳۴۵"}];
         this.lsv1.push(...array);
         this.update();
     }
@@ -30,12 +32,13 @@ export class PersonManage implements IactionP {
         let tr: string = "";
 
         this.lsv.forEach(item => {
-            tr += "<tr><td>" + item.username + "</td>";
+            tr += "<tr><td>" + item.id + "</td>";
+            tr += "<td>" + item.username + "</td>";
             tr += "<td>" + item.name + "</td>";
             tr += "<td>" + item.family + "</td>";
             tr += "<td>" + item.message + "</td>";
-            tr += "<td><button onclick="+"post("+item.username+") class='btn py-0 px-1 btn-warning' data-bs-target='#personModal' data-bs-toggle='modal'>"+ "ویرایش" +"</button>"
-            +"<button onclick="+"info("+item.username+") class='btn py-0 px-1 btn-info' data-bs-target='#personInfo' data-bs-toggle='modal'>"+ "نمایش" +"</button>"
+            tr += "<td><button onclick="+"post("+item.id+") class='btn py-0 px-1 btn-warning' data-bs-target='#personModal' data-bs-toggle='modal'>"+ "ویرایش" +"</button>"
+            +"<button onclick="+"info("+item.id+") class='btn py-0 px-1 btn-info' data-bs-target='#personInfo' data-bs-toggle='modal'>"+ "نمایش" +"</button>"
             +"</td></tr>";
             
         });
@@ -48,15 +51,15 @@ export class PersonManage implements IactionP {
     }
 
 
-
-    
-
-
-
-
-    edit(modal: any) {
+    findPerson(id: number): Person {
+        return this.lsv.find( item => item.id == id );
         
     }
+   
+
+    // edit(modal: any) {
+        
+    // }
 
 
 

@@ -4,8 +4,8 @@ exports.PersonManage = void 0;
 var PersonManage = /** @class */ (function () {
     function PersonManage() {
         //lsv : Person[] = new Array<Person>();
-        this.lsv = [{ username: "minarezaeei", name: "مینا", family: "22رضایی", message: "مطالب جدید" }];
-        this.lsv1 = [{ username: "maryamsabaeei", name: "مریم", family: "صبایی", message: "مطالب جدید۱۲۳۴۵" }];
+        this.lsv = [{ id: 1, username: "minarezaeei", name: "مینا", family: "22رضایی", message: "مطالب جدید" }];
+        this.lsv1 = [{ id: 2, username: "maryamsabaeei", name: "مریم", family: "صبایی", message: "مطالب جدید۱۲۳۴۵" }];
     }
     PersonManage.prototype.add = function () {
         // let array = [{name:"مینا", family:"رضایی",username:"minarezaeei"}] 
@@ -16,7 +16,7 @@ var PersonManage = /** @class */ (function () {
         var _a, _b, _c;
         (_a = this.lsv).push.apply(_a, this.lsv);
         (_b = this.lsv1).push.apply(_b, this.lsv1);
-        var array = [{ id: 1, username: "maryamsabaeei", name: "مریم", family: "صبایی", message: "مطالب جدید۱۲۳۴۵" }];
+        var array = [{ id: 3, username: "maryamsabaeei", name: "مریم", family: "صبایی", message: "مطالب جدید۱۲۳۴۵" }];
         (_c = this.lsv1).push.apply(_c, array);
         this.update();
     };
@@ -24,12 +24,13 @@ var PersonManage = /** @class */ (function () {
         if (this.lsv.length > 0) {
             var tr_1 = "";
             this.lsv.forEach(function (item) {
-                tr_1 += "<tr><td>" + item.username + "</td>";
+                tr_1 += "<tr><td>" + item.id + "</td>";
+                tr_1 += "<td>" + item.username + "</td>";
                 tr_1 += "<td>" + item.name + "</td>";
                 tr_1 += "<td>" + item.family + "</td>";
                 tr_1 += "<td>" + item.message + "</td>";
-                tr_1 += "<td><button onclick=" + "post(" + item.username + ") class='btn py-0 px-1 btn-warning' data-bs-target='#personModal' data-bs-toggle='modal'>" + "ویرایش" + "</button>"
-                    + "<button onclick=" + "info(" + item.username + ") class='btn py-0 px-1 btn-info' data-bs-target='#personInfo' data-bs-toggle='modal'>" + "نمایش" + "</button>"
+                tr_1 += "<td><button onclick=" + "post(" + item.id + ") class='btn py-0 px-1 btn-warning' data-bs-target='#personModal' data-bs-toggle='modal'>" + "ویرایش" + "</button>"
+                    + "<button onclick=" + "info(" + item.id + ") class='btn py-0 px-1 btn-info' data-bs-target='#personInfo' data-bs-toggle='modal'>" + "نمایش" + "</button>"
                     + "</td></tr>";
             });
             document.getElementById("tbody").innerHTML = tr_1;
@@ -38,6 +39,9 @@ var PersonManage = /** @class */ (function () {
             document.getElementById("tbody").innerHTML = "";
         }
     };
+    // findPerson(id: number): Person {
+    //     return this.lsv.find(item=>item.id == id);
+    // }
     PersonManage.prototype.edit = function (modal) {
     };
     return PersonManage;

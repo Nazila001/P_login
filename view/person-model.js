@@ -7,3 +7,9 @@ var Person = /** @class */ (function () {
     return Person;
 }());
 exports.Person = Person;
+// export interface IactionP {
+//     update();
+//     add();
+//     addAll();
+//     // findPerson(id:number) : Person;
+// }
