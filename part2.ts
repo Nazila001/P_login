@@ -1,5 +1,5 @@
 import { PersonManage } from "./data_access_layer/Person";
-// import { Person } from "./view/person-model";
+import { Person } from './view/person-model';
 
 
 // let perM : PersonManage = new PersonManage();
@@ -17,6 +17,7 @@ import { PersonManage } from "./data_access_layer/Person";
             (document.getElementById("personLabel")as any).innerText = "افزودن پست جدید";
         }
         else{
-            (document.getElementById("personLabel")as any).innerText =   `ویرایش ${state}`;
+            let person = new PersonManage.findPerson(state);
+            (document.getElementById("personLabel")as any).innerText =   `ویرایش ${person.name}`;
         }
     }
