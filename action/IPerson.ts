@@ -2,9 +2,10 @@ import { Person } from '../view/person-model';
 
 export interface IactionP {
     
-    add();
-    addAll();
-    update();
-    // findPerson (username:string) : Person;
+    add():any;
+    addAll():any;
+    update():any;
+    findPerson (id:number) : Person ;
+    // findPerson (id:number) : Person | undefined;
     // edit(modal: any);
 }

@@ -1,12 +1,10 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.Alert = void 0;
-var Alert = /** @class */ (function () {
-    function Alert() {
-    }
-    Alert.prototype.message = function (mes) {
+class Alert {
+    message(mes) {
         alert(mes);
-    };
-    return Alert;
-}());
+    }
+}
 exports.Alert = Alert;
+//# sourceMappingURL=alert.js.map

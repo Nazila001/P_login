@@ -5,10 +5,3 @@ export class Person {
     family : string;
     message : string;
 }
-
-// export interface IactionP {
-//     update();
-//     add();
-//     addAll();
-//     // findPerson(id:number) : Person;
-// }

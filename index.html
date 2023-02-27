@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <!-- Modal to add or edit -->
     <div class="modal fade" id="personModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -48,6 +49,7 @@
         </div>
     </div>
 
+    <!-- Modal  -->
     <div class="modal fade" id="personInfo" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -106,7 +108,7 @@
                                 <td>افزودن مطالب جدید به پست</td>
                                 <td>
 
-                                    <button onclick="post('edit')" class="btn py-0 px-1 btn btn-primary" data-bs-target="#personModal" data-bs-toggle="modal" >ویرایش</button>
+                                    <button onclick="person('edit')" class="btn py-0 px-1 btn btn-primary" data-bs-target="#personModal" data-bs-toggle="modal" >ویرایش</button>
                                     <button  class="btn py-0 px-1 btn-info" data-bs-target="#personModal" data-bs-toggle="modal">نمایش</button>
                                     <button  class="btn py-0 px-1 btn-danger" data-bs-target="#personModal" data-bs-toggle="modal">حذف</button>
                                 </td>
