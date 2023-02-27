@@ -1,9 +1,8 @@
-export class Person{
+export class Person {
     id : number;
     username: string;
     name : string;
     family : string;
-    pass? : string;
     message : string;
 }
 

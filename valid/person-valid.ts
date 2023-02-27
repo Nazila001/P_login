@@ -1,6 +1,6 @@
 import { Person } from "../view/person-model";
 
-export class PersonValid{
+export class PersonValid {
     validData(person:Person): boolean {   //recognizing that data is valid or no  / validation data
         return  this.username(person.username) &&
         this.name(parent.name) &&
@@ -31,4 +31,6 @@ export class PersonValid{
             return true
         else return false
     }
+
+
 }

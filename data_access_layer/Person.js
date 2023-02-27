@@ -8,29 +8,26 @@ var PersonManage = /** @class */ (function () {
         this.lsv1 = [{ id: 2, username: "maryamsabaeei", name: "مریم", family: "صبایی", message: "مطالب جدید۱۲۳۴۵" }];
     }
     PersonManage.prototype.add = function () {
-        // let array = [{name:"مینا", family:"رضایی",username:"minarezaeei"}] 
-        // this.lsv.push(...this.lsv);
-        // let array(...array); //how to add a item into an array
+        //  let array1 = [{name:"مینا", family:"رضایی",username:"minarezaeei"}] 
+        //  this.array1.push(...this.array1);
     };
     PersonManage.prototype.addAll = function () {
-        var _a, _b, _c;
-        (_a = this.lsv).push.apply(_a, this.lsv);
-        (_b = this.lsv1).push.apply(_b, this.lsv1);
-        var array = [{ id: 3, username: "maryamsabaeei", name: "مریم", family: "صبایی", message: "مطالب جدید۱۲۳۴۵" }];
-        (_c = this.lsv1).push.apply(_c, array);
+        var _a;
+        (_a = this.lsv1).push.apply(_a, this.lsv1);
         this.update();
     };
     PersonManage.prototype.update = function () {
-        if (this.lsv.length > 0) {
+        if (this.lsv1.length > 0) {
             var tr_1 = "";
-            this.lsv.forEach(function (item) {
+            this.lsv1.forEach(function (item) {
                 tr_1 += "<tr><td>" + item.id + "</td>";
                 tr_1 += "<td>" + item.username + "</td>";
                 tr_1 += "<td>" + item.name + "</td>";
                 tr_1 += "<td>" + item.family + "</td>";
                 tr_1 += "<td>" + item.message + "</td>";
-                tr_1 += "<td><button onclick=" + "post(" + item.id + ") class='btn py-0 px-1 btn-warning' data-bs-target='#personModal' data-bs-toggle='modal'>" + "ویرایش" + "</button>"
+                tr_1 += "<td><button onclick=" + "post(" + item.id + ") class='btn py-0 px-1 btn btn-primary' data-bs-target='#personModal' data-bs-toggle='modal'>" + "ویرایش" + "</button>"
                     + "<button onclick=" + "info(" + item.id + ") class='btn py-0 px-1 btn-info' data-bs-target='#personInfo' data-bs-toggle='modal'>" + "نمایش" + "</button>"
+                    + "<button onclick=" + "delete(" + item.id + ") class='btn py-0 px-1 btn-danger' data-bs-target='#personInfo' data-bs-toggle='modal'>" + "حذف" + "</button>"
                     + "</td></tr>";
             });
             document.getElementById("tbody").innerHTML = tr_1;
@@ -39,8 +36,8 @@ var PersonManage = /** @class */ (function () {
             document.getElementById("tbody").innerHTML = "";
         }
     };
-    // findPerson(id: number): Person {
-    //     return this.lsv.find(item=>item.id == id);
+    // findPerson(username:string): Person {
+    //     return this.lsv.find( item => item.username == username );
     // }
     PersonManage.prototype.edit = function (modal) {
     };

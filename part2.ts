@@ -1,15 +1,15 @@
-import { PersonManage } from "./data_access_layer/Person";
-import { Person } from './view/person-model';
+
+import { PersonManage } from './data_access_layer/Person';
 
 
-// let perM : PersonManage = new PersonManage();
+    let perM : PersonManage = new PersonManage();
 
-    let update = () => {
-        new PersonManage().update();
+    export let update = () => {
+        perM.update();
     } 
 
-    let addAll = () =>{
-        new PersonManage().addAll();
+    export let addAll = () =>{
+        perM.addAll();
     }
 
     let post = (state : any ) => {
@@ -17,12 +17,23 @@ import { Person } from './view/person-model';
             (document.getElementById("personLabel")as any).innerText = "افزودن پست جدید";
         }
         else{
-            let person = new PersonManage.findPerson(state);
-            (document.getElementById("personLabel")as any).innerText =   `ویرایش ${person.name}`;
-            (document.getElementById("username")as any)["value"] = person.username;
-            (document.getElementById("name")as any)["value"] = person.name;
-            (document.getElementById("family")as any)["value"] = person.family;
-            (document.getElementById("message")as any)["value"] = person.message;
-
+            (document.getElementById("personLabel")as any).innerText =   `ویرایش ${state}`;
         }
     }
+
+
+
+    // let post = (state : any ) => {
+    //     if (state == "add") {
+    //         (document.getElementById("personLabel")as any).innerText = "افزودن پست جدید";
+    //     }
+    //     else{
+    //         let person = new PersonManage.findPerson(state);
+    //         (document.getElementById("personLabel")as any).innerText =   `ویرایش ${person.name}`;
+    //         (document.getElementById("username")as any)["value"] = person.username;
+    //         (document.getElementById("name")as any)["value"] = person.name;
+    //         (document.getElementById("family")as any)["value"] = person.family;
+    //         (document.getElementById("message")as any)["value"] = person.message;
+
+    //     }
+    // }
