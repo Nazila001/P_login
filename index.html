@@ -10,6 +10,7 @@
     
 </head>
 
+
 <body>
     <!-- Modal to add or edit -->
     <div class="modal fade" id="personModal" tabindex="-1" aria-hidden="true">
@@ -69,7 +70,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismis="modal">انصراف</button>
-                    <button type="button" class="btn btn-primary">ذخیره</button>
+                    <button onclick="savePerson()" type="button" class="btn btn-primary">ذخیره</button>
                 </div>
             </div>
         </div>
@@ -107,7 +108,6 @@
                                 <td>شایان</td>
                                 <td>افزودن مطالب جدید به پست</td>
                                 <td>
-
                                     <button onclick="person('edit')" class="btn py-0 px-1 btn btn-primary" data-bs-target="#personModal" data-bs-toggle="modal" >ویرایش</button>
                                     <button  class="btn py-0 px-1 btn-info" data-bs-target="#personModal" data-bs-toggle="modal">نمایش</button>
                                     <button  class="btn py-0 px-1 btn-danger" data-bs-target="#personModal" data-bs-toggle="modal">حذف</button>
@@ -126,10 +126,14 @@
         var exports = {}
     </script>
 
+    
+    <!-- <script src=”https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js”></script> -->
+
+
     <script src="/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
     <script src="view/user-model.js"></script>
     <script src="common/alert.js">  </script>
-    <script  src="data_access_layer/Person.js"></script>
+    <script src="data_access_layer/Person.js"></script>
     <script src="valid/info-valid.js"></script>
     <script src="part2.js"></script>
 </body>

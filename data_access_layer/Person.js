@@ -9,9 +9,14 @@ class PersonManage {
         this.lsv3 = [{ id: 4, username: "reyhaneshoja", name: "ریحانه", family: "شجاع", message: " درخواست بازگشت کالا" }];
         this.lsv4 = [{ id: 5, username: "raanakian", name: "رعنا", family: "کیان", message: "سوال در مورد بازگشت کالا" }];
     }
-    add() {
-        let array1 = [{ id: 2, username: "raanakian", name: "رعنا", family: "کیان", message: "سوال در مورد بازگشت کالا" }];
-        array1.push(...array1);
+    add(model) {
+        this.lsv.push(model);
+        this.update();
+    }
+    edit(model) {
+        let index = this.lsv.findIndex(model);
+        if (index != -1)
+            this.lsv.splice(index, 1, model);
     }
     addAll() {
         this.lsv4.push(...this.lsv4);
@@ -40,8 +45,6 @@ class PersonManage {
     findPerson(id) {
         var _a;
         return (_a = this.lsv) === null || _a === void 0 ? void 0 : _a.find(item => item.id == id);
-    }
-    edit(modal) {
     }
 }
 exports.PersonManage = PersonManage;

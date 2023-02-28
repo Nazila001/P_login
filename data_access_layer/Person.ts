@@ -4,22 +4,26 @@ import { Person } from '../view/person-model';
 
 export class PersonManage implements IactionP {
 
-
-    
-
     //lsv : Person[] = new Array<Person>();
     lsv : Person[] = [{id:1, username:"minarezaeei", name:"مینا", family:"رضایی", message:"سوال در مورد سفارش گذاری"}];
     lsv1 : Person[] = [{id:2, username:"maryamsabaeei", name:"مریم", family:"صبایی", message:" درخواست خرید مجدد کالا"}];
     lsv2 : Person[] = [{id:3, username:"sabazahedi", name:"صبا", family:"زاهدی", message:" درخواست لعو خرید کالا"}];
     lsv3 : Person[] = [{id:4, username:"reyhaneshoja", name:"ریحانه", family:"شجاع", message:" درخواست بازگشت کالا"}];
     lsv4 : Person[] = [{id:5, username:"raanakian", name:"رعنا", family:"کیان", message:"سوال در مورد بازگشت کالا"}];
+    
 
-
-
-    add() {
-         let array1 = [{id:2, username:"raanakian", name:"رعنا", family:"کیان", message:"سوال در مورد بازگشت کالا"}];
-         array1.push(...array1);
+    add(model: any) {
+        this.lsv.push(model);
+        this.update();
     }
+
+
+    edit(model: any) {
+        let index = this.lsv.findIndex(model)
+        if (index != -1)
+            this.lsv.splice(index,1,model);
+    }
+
 
     addAll(){
         this.lsv4.push(...this.lsv4);
@@ -52,21 +56,9 @@ export class PersonManage implements IactionP {
     }
 
 
-    findPerson(id:number): Person  {
+    findPerson(id:number): Person | undefined {
       return  this.lsv?.find(item =>item.id == id);
     }
-
-
-    // findPerson(id:number): Person | undefined {
-    //     return  this.lsv?.find(item =>item.id == id);
-    //       // return  this.lsv.find(item => item.id == id);
-    //  }
-  
-
-    edit(modal: any) {
-        
-    }
-
 
 
 }
