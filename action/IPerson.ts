@@ -7,5 +7,5 @@ export interface IactionP {
     addAll():any;
     update():any;
     findPerson (id:number) : Person | undefined ;
-
+    deletePerson(id:number):any;
 }

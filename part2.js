@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addAll = exports.update = void 0;
+exports.deletePerson = exports.info = exports.savePerson = exports.addAll = exports.update = void 0;
 const person_valid_1 = require("./valid/person-valid");
 const Person_1 = require("./data_access_layer/Person");
 const person_model_1 = require("./view/person-model");
@@ -36,6 +36,7 @@ let savePerson = () => {
     let fa = document.getElementById("family")["value"];
     let mes = document.getElementById("message")["value"];
     if (ns != undefined && na != undefined && fa != undefined && mes != undefined) {
+        model = new person_model_1.Person();
         model.username = ns;
         model.name = na;
         model.family = fa;
@@ -45,6 +46,7 @@ let savePerson = () => {
                 perM.add(model);
             }
             else {
+                model.id = status;
                 perM.edit(model);
             }
         }
@@ -56,4 +58,20 @@ let savePerson = () => {
         alert("اطلاعات را کامل کنید");
     }
 };
+exports.savePerson = savePerson;
+let info = (id) => {
+    let person = perM.findPerson(id);
+    document.getElementById("personLblInfo").innerText = `نمایش اطلاعات ${person === null || person === void 0 ? void 0 : person.name}`;
+    document.getElementById("infoUser").innerText = person.username;
+    document.getElementById("infoName").innerText = person.name;
+    document.getElementById("infoFamily").innerText = person.family;
+    document.getElementById("infoPost").innerText = person.message;
+    document.getElementById("infoId").innerText = person.id.toString();
+};
+exports.info = info;
+let deletePerson = (id) => {
+    perM.deletePerson(id);
+    alert("حذف با موفقیت انجام شد");
+};
+exports.deletePerson = deletePerson;
 //# sourceMappingURL=part2.js.map

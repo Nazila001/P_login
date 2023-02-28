@@ -33,12 +33,13 @@ import { Person } from './view/person-model';
         }
     }
 
-    let savePerson = () => {
+    export let savePerson = () => {
         let ns = (document.getElementById("username")as any)["value"];
         let na = (document.getElementById("name")as any)["value"];
         let fa = (document.getElementById("family")as any)["value"];
         let mes = (document.getElementById("message")as any)["value"];
         if (ns != undefined &&  na != undefined && fa != undefined && mes != undefined ){
+            model = new Person();
             model.username = ns;
             model.name = na;
             model.family = fa;
@@ -48,6 +49,7 @@ import { Person } from './view/person-model';
                     perM.add(model);
                 }
                 else{
+                    model.id = status;
                     perM.edit(model);   
                 }
             }
@@ -61,12 +63,18 @@ import { Person } from './view/person-model';
     }
 
 
+    export let info = (id:number) =>{
+            let person = perM.findPerson(id);
+            document.getElementById("personLblInfo").innerText = `نمایش اطلاعات ${person === null || person === void 0 ? void 0 : person.name}`;
+            document.getElementById("infoUser").innerText = person.username;
+            document.getElementById("infoName").innerText  = person.name;
+            document.getElementById("infoFamily").innerText  = person.family;
+            document.getElementById("infoPost").innerText  = person.message;
+            document.getElementById("infoId").innerText = person.id.toString();
+    };
 
-    // let post = (state : any ) => {
-    //     if (state == "add") {
-    //         (document.getElementById("personLabel")as any).innerText = "افزودن پست جدید";
-    //     }
-    //     else{
-    //         (document.getElementById("personLabel")as any).innerText =   `ویرایش ${state}`;
-    //     }
-    // }
+    export let deletePerson = (id:number) => {
+        perM.deletePerson(id);
+        alert("حذف با موفقیت انجام شد");
+    } 
+    

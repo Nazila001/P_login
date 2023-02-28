@@ -3,23 +3,28 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PersonManage = void 0;
 class PersonManage {
     constructor() {
-        this.lsv = [{ id: 1, username: "minarezaeei", name: "مینا", family: "رضایی", message: "سوال در مورد سفارش گذاری" }];
-        this.lsv1 = [{ id: 2, username: "maryamsabaeei", name: "مریم", family: "صبایی", message: " درخواست خرید مجدد کالا" }];
-        this.lsv2 = [{ id: 3, username: "sabazahedi", name: "صبا", family: "زاهدی", message: " درخواست لعو خرید کالا" }];
-        this.lsv3 = [{ id: 4, username: "reyhaneshoja", name: "ریحانه", family: "شجاع", message: " درخواست بازگشت کالا" }];
-        this.lsv4 = [{ id: 5, username: "raanakian", name: "رعنا", family: "کیان", message: "سوال در مورد بازگشت کالا" }];
+        this.lsv = new Array();
     }
     add(model) {
+        if (this.lsv.length == 0) {
+            model.id == 1;
+        }
+        else {
+            let last = this.lsv[this.lsv.length - 1];
+            model.id = last.id + 1;
+        }
         this.lsv.push(model);
         this.update();
     }
     edit(model) {
-        let index = this.lsv.findIndex(model);
-        if (index != -1)
+        let index = this.lsv.findIndex(item => item.id == model.id);
+        if (index != -1) {
             this.lsv.splice(index, 1, model);
+        }
+        this.update();
     }
     addAll() {
-        this.lsv4.push(...this.lsv4);
+        this.lsv.push(...this.lsv);
         this.update();
     }
     update() {
@@ -33,7 +38,7 @@ class PersonManage {
                 tr += "<td>" + item.message + "</td>";
                 tr += "<td><button onclick=" + "person(" + item.id + ") class='btn py-0 px-1 btn btn-primary' data-bs-target='#personModal' data-bs-toggle='modal'>" + "ویرایش" + "</button>"
                     + "<button onclick=" + "info(" + item.id + ") class='btn py-0 px-1 btn-info' data-bs-target='#personInfo' data-bs-toggle='modal'>" + "نمایش" + "</button>"
-                    + "<button onclick=" + "deleteP(" + item.id + ") class='btn py-0 px-1 btn-danger' data-bs-target='#personInfo' data-bs-toggle='modal'>" + "حذف" + "</button>"
+                    + "<button onclick=" + "deletePerson(" + item.id + ") class='btn py-0 px-1 btn-danger' data-bs-target='#personInfo' data-bs-toggle='modal'>" + "حذف" + "</button>"
                     + "</td></tr>";
             });
             document.getElementById("tbody").innerHTML = tr;
@@ -45,6 +50,11 @@ class PersonManage {
     findPerson(id) {
         var _a;
         return (_a = this.lsv) === null || _a === void 0 ? void 0 : _a.find(item => item.id == id);
+    }
+    deletePerson(id) {
+        let index = this.lsv.findIndex(item => item.id);
+        this.lsv.splice(index, 1);
+        this.update();
     }
 }
 exports.PersonManage = PersonManage;
